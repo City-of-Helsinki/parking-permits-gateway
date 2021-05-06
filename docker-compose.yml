@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      target: development_stage
+    volumes:
+      - .:/app:cached
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      - DEV_SERVER=true
+      - DOCKER_BIND_MOUNT_IN_USE=true
