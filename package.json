@@ -1,7 +1,9 @@
 {
   "scripts": {
     "start": "node src/app.js",
-    "develop": "nodemon src/app.js"
+    "develop": "nodemon src/app.js",
+    "lint:check": "eslint .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "express": "4.17.1"
