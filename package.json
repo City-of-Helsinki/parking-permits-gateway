@@ -15,5 +15,16 @@
   "prettier": {
     "quoteProps": "consistent",
     "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "env": {
+      "es2021": true,
+      "node": true
+    },
+    "rules": {}
   }
 }
