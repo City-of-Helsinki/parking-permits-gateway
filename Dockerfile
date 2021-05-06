@@ -24,6 +24,9 @@ COPY package.json yarn.lock /app/
 FROM base_stage AS development_stage
 # ==============================
 
+# git is needed for 'husky install' to work
+RUN apt-get update && apt-get install --yes --no-install-recommends git
+
 RUN yarn install --frozen-lockfile --production=false && \
     yarn cache clean
 
