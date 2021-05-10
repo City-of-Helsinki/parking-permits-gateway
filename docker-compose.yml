@@ -12,3 +12,4 @@ services:
     environment:
       - DEV_SERVER=true
       - DOCKER_BIND_MOUNT_IN_USE=true
+      - INSTALL_PRECOMMIT=true

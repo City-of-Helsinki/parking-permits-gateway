@@ -1,12 +1,33 @@
 {
   "scripts": {
     "start": "node src/app.js",
-    "develop": "nodemon src/app.js"
+    "develop": "nodemon src/app.js",
+    "lint:check": "eslint .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "express": "4.17.1"
   },
   "devDependencies": {
-    "nodemon": "2.0.7"
+    "eslint": "7.25.0",
+    "eslint-config-prettier": "8.3.0",
+    "husky": "6.0.0",
+    "nodemon": "2.0.7",
+    "prettier": "2.2.1"
+  },
+  "prettier": {
+    "quoteProps": "consistent",
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "env": {
+      "es2021": true,
+      "node": true
+    },
+    "rules": {}
   }
 }
