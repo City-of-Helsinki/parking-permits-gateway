@@ -13,6 +13,8 @@ services:
       - DEV_SERVER=true
       - DOCKER_BIND_MOUNT_IN_USE=true
       - INSTALL_PRECOMMIT=true
+      - PARKING_PERMITS_GRAPHQL_API=http://graphql-api:8000
+      - WAIT_FOR_PARKING_PERMITS_GRAPHQL_API=true
 
 networks:
   default:
