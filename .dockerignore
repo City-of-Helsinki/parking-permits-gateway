@@ -13,4 +13,5 @@
 #################################################
 !docker-entrypoint.sh
 !package.json
+!wait-for-it.sh
 !yarn.lock
