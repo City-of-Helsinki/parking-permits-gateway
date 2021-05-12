@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ "$DOCKER_BIND_MOUNT_IN_USE" = "true" ]]; then
+if [[ "$DOCKER_BIND_MOUNT_IN_USE" = "true" && ! -d "/app/node_modules/" ]]; then
     yarn install --frozen-lockfile
 fi
 
