@@ -1,11 +1,16 @@
-const express = require("express");
-const app = express();
+const { ApolloGateway } = require("@apollo/gateway");
+const { ApolloServer } = require("apollo-server");
+
 const PORT = process.env.PORT || "3000";
+const PARKING_PERMITS_GRAPHQL_API = process.env.PARKING_PERMITS_GRAPHQL_API;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+const federatedServices = [
+  { name: "parking-permits", url: PARKING_PERMITS_GRAPHQL_API },
+];
 
-app.listen(PORT, () => {
-  console.log(`Starting server at http://localhost:${PORT}`);
+const gateway = new ApolloGateway({ serviceList: federatedServices });
+const server = new ApolloServer({ gateway, subscriptions: false });
+
+server.listen(PORT).then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
 });
