@@ -7,7 +7,7 @@ FROM ${BASE_IMAGE}:${NODE_VERSION}-${IMAGE_VARIANT} AS base_stage
 # ==============================
 
 RUN groupadd --system --gid 2000 non-root-group && \
-    useradd  --system --gid      non-root-group --create-home --uid 3000 non-root-user
+    useradd  --system --gid      non-root-group --create-home --uid 3000 appuser
 
 WORKDIR /app
 
@@ -35,7 +35,7 @@ RUN yarn install --frozen-lockfile --production=false && \
 
 COPY . /app/
 
-USER non-root-user:non-root-group
+USER appuser:non-root-group
 
 # ==============================
 FROM base_stage AS production_stage
@@ -46,4 +46,4 @@ RUN yarn install --frozen-lockfile --production=true && \
 
 COPY . /app/
 
-USER non-root-user:non-root-group
+USER appuser:non-root-group
