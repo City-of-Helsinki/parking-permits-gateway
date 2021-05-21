@@ -10,7 +10,6 @@ services:
     ports:
       - "127.0.0.1:3000:3000"
     environment:
-      - DEV_SERVER=true
       - DOCKER_BIND_MOUNT_IN_USE=true
       - INSTALL_PRECOMMIT=true
       - PARKING_PERMITS_GRAPHQL_API=http://graphql-api:8000
