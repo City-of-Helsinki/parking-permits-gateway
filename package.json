@@ -1,4 +1,10 @@
 {
+  "name": "parking-permits-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "start": "node src/app.js",
     "develop": "nodemon src/app.js",
