@@ -13,14 +13,6 @@ WORKDIR /app
 
 EXPOSE 3000
 
-# Add tini init system https://github.com/krallin/tini
-ENV TINI_VERSION v0.19.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-RUN chmod +x /tini
-
-COPY docker-entrypoint.sh /app/
-ENTRYPOINT ["/tini", "--", "/app/docker-entrypoint.sh"]
-
 COPY package.json yarn.lock /app/
 
 # ==============================
