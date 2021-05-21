@@ -36,6 +36,7 @@ RUN yarn install --frozen-lockfile --production=false && \
 COPY . /app/
 
 USER appuser:non-root-group
+CMD ["yarn", "develop"]
 
 # ==============================
 FROM base_stage AS production_stage
@@ -47,3 +48,4 @@ RUN yarn install --frozen-lockfile --production=true && \
 COPY . /app/
 
 USER appuser:non-root-group
+CMD ["yarn", "start"]
