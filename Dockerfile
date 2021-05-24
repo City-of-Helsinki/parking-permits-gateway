@@ -6,8 +6,8 @@ ARG IMAGE_VARIANT=slim
 FROM ${BASE_IMAGE}:${NODE_VERSION}-${IMAGE_VARIANT} AS base_stage
 # ==============================
 
-RUN groupadd --system --gid 2000 non-root-group && \
-    useradd  --system --gid      non-root-group --create-home --uid 3000 appuser
+RUN groupadd --system --gid 2000 appgroup && \
+    useradd  --system --gid      appgroup --create-home --uid 3000 appuser
 
 WORKDIR /app
 
@@ -35,7 +35,7 @@ RUN yarn install --frozen-lockfile --production=false && \
 
 COPY . /app/
 
-USER appuser:non-root-group
+USER appuser:appgroup
 CMD ["yarn", "develop"]
 
 # ==============================
@@ -47,5 +47,5 @@ RUN yarn install --frozen-lockfile --production=true && \
 
 COPY . /app/
 
-USER appuser:non-root-group
+USER appuser:appgroup
 CMD ["yarn", "start"]
