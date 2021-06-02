@@ -6,8 +6,8 @@ ARG IMAGE_VARIANT=slim
 FROM ${BASE_IMAGE}:${NODE_VERSION}-${IMAGE_VARIANT} AS base_stage
 # ==============================
 
-RUN groupadd --system --gid 0 appgroup && \
-    useradd  --system --gid   appgroup --create-home --uid 3000 appuser
+RUN groupadd --system --gid 2000 appgroup && \
+    useradd  --system --gid      appgroup --create-home --uid 3000 appuser
 
 WORKDIR /app
 
