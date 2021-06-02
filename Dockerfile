@@ -35,8 +35,6 @@ RUN yarn install --frozen-lockfile --production=false && \
 
 COPY . /app/
 
-USER appuser:appgroup
-
 # ==============================
 FROM base_stage AS production_stage
 # ==============================
@@ -45,5 +43,3 @@ RUN yarn install --frozen-lockfile --production=true && \
     yarn cache clean
 
 COPY . /app/
-
-USER appuser:appgroup
