@@ -15,3 +15,8 @@ if [[ "$INSTALL_PRECOMMIT" = "true" ]]; then
     yarn run husky install
 fi
 
+if [[ "$DEV_SERVER" = "true" ]]; then
+    yarn run develop
+else
+    yarn run start
+fi
