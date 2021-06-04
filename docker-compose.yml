@@ -13,7 +13,9 @@ services:
       - DEV_SERVER=true
       - DOCKER_BIND_MOUNT_IN_USE=true
       - INSTALL_PRECOMMIT=true
+      - OPEN_CITY_PROFILE_GRAPHQL_API=http://profile-backend:8080/graphql/
       - PARKING_PERMITS_GRAPHQL_API=http://graphql-api:8000
+      - WAIT_FOR_OPEN_CITY_PROFILE_GRAPHQL_API=true
       - WAIT_FOR_PARKING_PERMITS_GRAPHQL_API=true
 
 networks:
