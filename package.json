@@ -2,12 +2,12 @@
   "name": "parking-permits-gateway",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "src/server.js",
   "author": "",
   "license": "MIT",
   "scripts": {
-    "start": "node src/app.js",
-    "develop": "nodemon src/app.js",
+    "start": "node src/server.js",
+    "develop": "nodemon src/server.js",
     "lint:check": "eslint .",
     "format:check": "prettier --check ."
   },
