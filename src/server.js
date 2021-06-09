@@ -3,7 +3,11 @@ const { ApolloServer } = require("apollo-server");
 
 const PORT = process.env.PORT || "3000";
 
-const server = new ApolloServer({ gateway, subscriptions: false });
+const server = new ApolloServer({
+  gateway,
+  subscriptions: false,
+  context: ({ req }) => req,
+});
 
 server.listen(PORT).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
