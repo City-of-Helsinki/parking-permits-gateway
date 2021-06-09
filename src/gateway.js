@@ -8,7 +8,9 @@ const federatedServices = [
   { name: "parking-permits", url: PARKING_PERMITS_GRAPHQL_API },
 ];
 
-const gateway = new ApolloGateway({ serviceList: federatedServices });
+const gatewayOptions = { serviceList: federatedServices };
+
+const gateway = new ApolloGateway(gatewayOptions);
 
 module.exports = {
   gateway,
