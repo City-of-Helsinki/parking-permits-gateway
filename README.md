@@ -33,6 +33,6 @@ Our gateway composes the following subgraphs:
   docker-compose up
   ```
 
-- Access development server on [localhost:3000](http://localhost:3000)
+- Access development server on [localhost:3333](http://localhost:3333)
 
 - Done!

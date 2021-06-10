@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/app:cached
     ports:
-      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3333:3333"
     environment:
       - DEV_SERVER=true
       - DOCKER_BIND_MOUNT_IN_USE=true
