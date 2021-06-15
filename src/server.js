@@ -1,7 +1,7 @@
 const { gateway } = require("./gateway.js");
 const { ApolloServer } = require("apollo-server");
 
-const PORT = process.env.PORT || "3000";
+const PORT = process.env.PORT || "3333";
 
 const server = new ApolloServer({
   gateway,

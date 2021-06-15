@@ -8,7 +8,7 @@ FROM ${BASE_IMAGE}:${NODE_VERSION}-${IMAGE_VARIANT} AS base_stage
 
 WORKDIR /app
 
-EXPOSE 3000
+EXPOSE 3333
 
 # Add tini init system https://github.com/krallin/tini
 ENV TINI_VERSION v0.19.0

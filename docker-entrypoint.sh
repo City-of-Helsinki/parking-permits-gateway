@@ -3,12 +3,12 @@
 set -e
 
 if [[ "$WAIT_FOR_OPEN_CITY_PROFILE_GRAPHQL_API" = "true" ]]; then
-    ADDRESS=$(echo $OPEN_CITY_PROFILE_GRAPHQL_API | cut -c 8-27)
+    ADDRESS=$(echo $OPEN_CITY_PROFILE_GRAPHQL_API | cut -d '/' -f 3)
     ./wait-for-it.sh $ADDRESS --timeout=120
 fi
 
 if [[ "$WAIT_FOR_PARKING_PERMITS_GRAPHQL_API" = "true" ]]; then
-    ADDRESS=$(echo $PARKING_PERMITS_GRAPHQL_API | cut -c 8-)
+    ADDRESS=$(echo $PARKING_PERMITS_GRAPHQL_API | cut -d '/' -f 3)
     ./wait-for-it.sh $ADDRESS --timeout=120
 fi
 

@@ -8,13 +8,13 @@ services:
     volumes:
       - .:/app:cached
     ports:
-      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3333:3333"
     environment:
       - DEV_SERVER=true
       - DOCKER_BIND_MOUNT_IN_USE=true
       - INSTALL_PRECOMMIT=true
       - OPEN_CITY_PROFILE_GRAPHQL_API=http://profile-backend:8080/graphql/
-      - PARKING_PERMITS_GRAPHQL_API=http://graphql-api:8000
+      - PARKING_PERMITS_GRAPHQL_API=http://parking-permits-api:8888/graphql/
       - WAIT_FOR_OPEN_CITY_PROFILE_GRAPHQL_API=true
       - WAIT_FOR_PARKING_PERMITS_GRAPHQL_API=true
 
