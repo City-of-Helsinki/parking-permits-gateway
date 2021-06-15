@@ -1,0 +1,41 @@
+{
+  "name": "parking-permits-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js",
+    "develop": "nodemon src/server.js",
+    "lint:check": "eslint .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@apollo/gateway": "0.28.1",
+    "apollo-server": "2.24.0",
+    "graphql": "15.5.0"
+  },
+  "devDependencies": {
+    "eslint": "7.25.0",
+    "eslint-config-prettier": "8.3.0",
+    "husky": "6.0.0",
+    "nodemon": "2.0.7",
+    "prettier": "2.2.1"
+  },
+  "prettier": {
+    "quoteProps": "consistent",
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "env": {
+      "es2021": true,
+      "node": true
+    },
+    "rules": {}
+  }
+}
